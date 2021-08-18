@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "apptest"
+version = "0.1.0"
+description = ""
+authors = ["Vladimir Pokutniy <vovchikp.1989@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+Django = "^3.2.6"
+psycopg2-binary = "^2.9.1"
+#redis = "^3.5.3"
+#celery = "^5.1.2"
+#django-celery-beat = "^2.2.1"
+
+djangorestframework = "^3.12.4"
+django-filter = "^2.4.0"
+dj-database-url = "^0.5.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
