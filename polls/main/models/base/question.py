@@ -21,7 +21,7 @@ class Question(models.Model):
     text = models.TextField(null=True, blank=True, verbose_name="Текст вопроса")
     type_of_answer = models.IntegerField(verbose_name="Тип вопроса", choices=TYPE_OF_ANSWER_CHOICES)
     poll = models.ForeignKey(Poll, on_delete=models.CASCADE, verbose_name="Опрос")
-    answer = models.JSONField(verbose_name="Ответ", default={})
+    answer = models.JSONField(verbose_name="Ответ", default=dict)
 
     class Meta:
         verbose_name = "Вопрос"
