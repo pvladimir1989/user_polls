@@ -11,5 +11,8 @@ class Poll(models.Model):
         verbose_name = "Опрос"
         verbose_name_plural = "Опросы"
 
+    def __str__(self):
+        return self.title
+
 
 
