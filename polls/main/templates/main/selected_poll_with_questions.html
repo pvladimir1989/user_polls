@@ -1,10 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{#список вопросов#}
+{% extends 'main/base.html' %}
 
-</body>
-</html>
+{% block content %}
+
+<div class="container">
+    <div class="row center">
+        <div class="col-md-6 offset-md-3">
+<h1>Hello, {{ client_id }}!</h1>
+    <h2>{{ pk }}</h2>
+
+<div style="display: none" id="template1">
+    <a href="#" class="templ_href">
+        <span class="templ_text"></span>
+
+        </a>
+    </div>
+
+    <div id="result"></div>
+{% endblock %}
+
+{% block custom_js %}
+<script type="application/javascript">
+        var client_id = '{{ client_id }}';
+        var main_templ = $('#template1');
+        var result = $('#result');
+    console.log(client_id);
+
+        $.getJSON('/question?poll={{ pk }}',
+            function (response){
+            console.log(response);
+                response.results.forEach(function(x, i){
+                    var tmp = $(main_templ).clone();
+                    $(tmp).find('.templ_text').html(x.text);
+                    $(tmp).find('.templ_href').attr('href', '/selected_questions/'+x.id);
+                    $(result).append(tmp);
+                    $(tmp).show();
+                })
+            },
+            function(error) {
+                console.log('error', error)
+            }
+        );
+
+
+
+    </script>
+{%  endblock %}

@@ -12,6 +12,6 @@ class QuestionViewSet(ModelViewSet):
     serializer_class = QuestionSerializer
     filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
     permission_classes = [IsAuthenticated]
-    # filter_fields
+    filter_fields = ['poll']
     search_fields = ['text']
     # ordering_fields =
