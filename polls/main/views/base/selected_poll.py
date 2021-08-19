@@ -1,8 +1,16 @@
-from django.views.generic import ListView
+import uuid
 
-from main.models import Poll
+from django.http import HttpRequest, HttpResponse
+from django.shortcuts import render
 
 
-class SelectedPollListView(ListView):
-    model = Poll
-    template_name = "main/selected_poll_with_questions.html"
+def selected_poll(request: HttpRequest, pk) -> HttpResponse:
+    client_id = request.session.get('client_id', None)
+    if client_id is None:
+        client_id = str(uuid.uuid4())
+        request.session['client_id'] = client_id
+
+    return render(request, 'main/selected_poll_with_questions.html', {
+        'client_id': client_id,
+        'pk': pk,
+    })
