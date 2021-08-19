@@ -9,5 +9,8 @@ class Answer(models.Model):
     answer = models.JSONField(verbose_name="Ответ", default=dict)
 
     class Meta:
-        verbose_name = "Вопрос"
-        verbose_name_plural = "Вопросы"
+        verbose_name = "Ответ"
+        verbose_name_plural = "Ответы"
+
+    def __str__(self):
+        return self.answer

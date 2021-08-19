@@ -12,6 +12,6 @@ class PollViewSet(ModelViewSet):
     serializer_class = PollSerializer
     filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
     permission_classes = [IsAuthenticated]
-    # filter_fields
+    filter_fields = ['end_date']
     # search_fields =
     # ordering_fields =

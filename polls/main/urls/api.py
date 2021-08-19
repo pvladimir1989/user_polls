@@ -1,11 +1,12 @@
 from django.urls import path, include
 from rest_framework import routers
 
-from main.views import PollViewSet, QuestionViewSet
+from main.views import PollViewSet, QuestionViewSet, AnswerViewSet
 
 router = routers.DefaultRouter()
-router.register(r'poll', PollViewSet) # list of poll
-router.register(r'question', QuestionViewSet) # list question of poll poll_id -> list
+router.register(r'poll', PollViewSet)  # list of poll
+router.register(r'question', QuestionViewSet)  # list question of poll poll_id -> list
+router.register(r'answers', AnswerViewSet)
 # answers client_id --> list
 
 '''
