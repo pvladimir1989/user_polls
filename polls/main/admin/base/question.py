@@ -22,7 +22,7 @@ class QuestionAdmin(admin.ModelAdmin):
         if obj is None or obj.poll is None or obj.poll.start_date is None:
             return super(QuestionAdmin, self).has_change_permission(request)
         print('false')
-        return False
+        return True
 
     def has_delete_permission(self, request, obj=None):
         return self.has_change_permission(request, obj)

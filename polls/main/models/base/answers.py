@@ -13,4 +13,4 @@ class Answer(models.Model):
         verbose_name_plural = "Ответы"
 
     def __str__(self):
-        return self.answer
+        return '{0} {1}'.format(self.client_id, str(self.answer))
