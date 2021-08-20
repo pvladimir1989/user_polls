@@ -171,6 +171,37 @@ http://0.0.0.0:8000/v1/client_poll/
 }
 
 
+http://0.0.0.0:8000/v1/client_poll/?client_id=1
+
+
+{
+    "result": [
+    
+        {
+        
+            "poll": "rrrrr",
+            
+            "url": "#1123",
+            
+            "answs": [
+            
+                {
+                
+                    "url": "#1123",
+                    
+                    "quest": "wqtwqt",
+                    
+                    "answ": "1 {'1': 123}"
+                    
+                }
+                
+            ]
+            
+        }
+        
+    ]
+    
+}
 
 
 
