@@ -3,9 +3,8 @@ from django.contrib import admin
 from main.models.base import Poll
 
 
-# @admin.register(BaseUser)
 class PollAdmin(admin.ModelAdmin):
-    list_display = ('title', 'start_date', 'end_date', 'description')
+    list_display = ('title', 'end_date', 'description', 'start_date',)
     search_fields = ('title',)
 
 

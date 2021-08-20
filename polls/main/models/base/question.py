@@ -25,3 +25,13 @@ class Question(models.Model):
 
     def __str__(self):
         return self.text
+
+    def save(self, force_insert=False, force_update=False, using=None,
+             update_fields=None):
+        print(1, self)
+        if self is not None and self.poll is not None:
+            print(2, self.poll, self.poll.start_date)
+        if self is None or self.poll is None or self.poll.start_date is None:
+            return super().save(force_insert, force_update, using, update_fields)
+        print('false')
+        return False

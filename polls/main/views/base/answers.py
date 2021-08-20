@@ -13,5 +13,3 @@ class AnswerViewSet(ModelViewSet):
     filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
     permission_classes = [IsAuthenticated]
     filter_fields = ['client_id']
-    # search_fields =
-    # ordering_fields =
